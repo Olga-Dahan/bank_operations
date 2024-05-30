@@ -1,0 +1,14 @@
+{
+    "app": {
+        "name": "bank_operations",
+        "port": 8080
+    },
+    "mysql": {
+        "host": "localhost",
+        "user": "root",
+        "password": "",
+        "database": "exam4",
+        "port": 3306,
+        "connectionLimit": 10
+    }
+}

@@ -1,0 +1,19 @@
+<div class="card">
+    
+    <div>
+    <br />
+    <b>Type of operation:</b> {{typeOfOperation}}
+    <br />
+    <b>Date:</b> {{operation?.date}}
+    <br />
+    <b>Sum:</b> {{operation?.sum}}
+    <br />
+    <span *ngIf="operation?.type===2"><b>Interest:</b> {{operation?.interest}}</span>
+    <br />
+    <span *ngIf="operation?.type===2"><b>Payments:</b> {{operation?.payments}}</span>
+    <br />
+    <button (click)="delete()">delete</button>
+    </div>
+
+    
+</div>

@@ -1,0 +1,93 @@
+{
+	"info": {
+		"_postman_id": "fcd1d191-4de2-4fc9-bb78-a17e36d76a44",
+		"name": "exam4",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32695833"
+	},
+	"item": [
+		{
+			"name": "get operations",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/operations",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"operations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get types of operations",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/types",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"types"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add operation",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/operations/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"operations",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/operations/delete/16",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"operations",
+						"delete",
+						"16"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

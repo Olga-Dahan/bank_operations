@@ -1,0 +1,52 @@
+<div>
+    <form (submit)="submitForm()" #addOperationForm="ngForm">
+
+        <label>Please enter your bank account (5 digits):</label>
+        <input type="text" [(ngModel)]="operation.accountNumber" name="accountNumber" required minlength="5"
+            maxlength="5" #accountNumberInput="ngModel" />
+        <span class="err" *ngIf="accountNumberInput.errors?.['required'] && accountNumberInput.touched">Bank account is
+            a required field</span>
+        <span class="err" *ngIf="accountNumberInput.errors?.['minlength'] && accountNumberInput.touched">The length of
+            the bank account have to be 5 digits</span>
+        <br>
+
+        <label>Please select type of operation:</label>
+        <select name="type" [(ngModel)]="operation.type" #typeNameInput="ngModel" required (change)="changed()">
+            <option disabled value=''>Please select type of operation</option>
+            <option *ngFor="let t of types" value={{t?.id}}>{{t?.name}}</option>
+        </select>
+        <span class="err" *ngIf="typeNameInput.errors?.['required'] && typeNameInput.touched">Type of operation is a
+            required field</span>
+
+        <ng-container *ngIf="selectedTypeId == 1 || selectedTypeId == 3">
+            <label>Sum:</label>
+            <input type="text" [(ngModel)]="operation.sum" name="sum" required #sumInput="ngModel">
+            <span class="err" *ngIf="sumInput.errors?.['required'] && sumInput.touched">Operation's
+                sum is a required field</span>
+        </ng-container>
+
+        <ng-container *ngIf="selectedTypeId == 2">
+            <label>Sum:</label>
+            <input type="text" [(ngModel)]="operation.sum" name="sum" required #sumInput="ngModel">
+            <span class="err" *ngIf="sumInput.errors?.['required'] && sumInput.touched">Operation's
+                sum is a required field</span>
+            <br />
+
+            <label>Interest:</label>
+            <input type="number" [(ngModel)]="operation.interest" name="interest" required #interestInput="ngModel">
+            <span class="err" *ngIf="interestInput.errors?.['required'] && interestInput.touched">Operation's
+                interest is a required field</span>
+            <br />
+
+            <label>Payments:</label>
+            <input type="number" [(ngModel)]="operation.payments" name="payments" required #paymentsInput="ngModel">
+            <span class="err" *ngIf="paymentsInput.errors?.['required'] && paymentsInput.touched">Operation's
+                payment is a required field</span>
+            <br />
+        </ng-container>
+
+
+        <button [disabled]="addOperationForm.invalid">Add Operation</button>
+
+    </form>
+</div>

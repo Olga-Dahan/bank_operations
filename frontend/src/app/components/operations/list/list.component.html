@@ -1,0 +1,14 @@
+<div>
+    <br />
+    <label>Type your bank account (5 digits):</label>
+    <br>
+    <input type="search" [(ngModel)]="account_number" />
+    <br>
+    <button (click)="search()">search operations</button>
+    <br>
+    <br>
+    <span class="err" *ngIf="lengthOfArray == 0">There is no such bank account!</span>
+
+    <app-card *ngFor="let o of operations" [operation]="o" (deleteFunction)="handleEvent($event)" ></app-card>
+
+</div>
